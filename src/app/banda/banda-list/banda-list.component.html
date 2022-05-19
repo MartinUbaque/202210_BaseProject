@@ -1,0 +1,31 @@
+<div class="container-fluid ">
+  <div class="row">
+    <h1>Bandas de Rock</h1>
+  </div>
+  <div class="row">
+  <div class="col-xs-12 col-sm-6  d-flex justify-content-left text-left">
+<table class="table">
+  <thead class="thread-white">
+    <tr>
+      <th >Id</th>
+      <th>Name</th>
+      <th >Number of members</th>
+    </tr>
+  </thead>
+  <tbody id="bandas">
+
+    <tr *ngFor="let banda of bandas" (click)="onSelected(banda)">
+    <td>{{banda.id}}</td>
+    <td><a href=javascript:void(0) >{{banda.name}}</a></td>
+    <td>{{banda.numberOfMembers}}</td>
+    </tr>
+
+  </tbody>
+  <p>Average number of members (rounded up): {{promedio}} </p>
+</table>
+
+</div>
+<div *ngIf="selected" class="col-xs-12 col-sm-6  d-flex justify-content-left text-left">
+  <app-banda-detail [bandaDetail]="selectedBanda"></app-banda-detail>
+</div>
+</div>
